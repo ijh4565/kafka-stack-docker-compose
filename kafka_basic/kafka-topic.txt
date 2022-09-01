@@ -1,0 +1,18 @@
+# Kafka Topic List
+kafka-topics --bootstrap-server localhost:9092 --list
+
+# Kafka Topic Create
+kafka-topics --bootstrap-server localhost:9092 --topic $topic_name --create
+
+# Kafka Topic Create with Partition
+kafka-topics --bootstrap-server localhost:9092 --topic $topic_name --partition 3 --create
+
+# Kafka Topic Create with Replication : Replication Factor cannot exceed the number of brokers in the cluster
+kafka-topics --bootstrap-server localhost:9092 --topic $topic_name --partition 3 --replication-factor 3 --create
+
+# Describe Kafka Topic
+kafka-topics --bootstrap-server localhost:9092 --topic $topic_name --describe # Specify Topic
+kafka-topics --bootstrap-server localhost:9092 --describe # All Topics
+
+# Delete Kafka Topic
+kafka-topics --bootstrap-server localhost:9092 --topic $topic_name --delete

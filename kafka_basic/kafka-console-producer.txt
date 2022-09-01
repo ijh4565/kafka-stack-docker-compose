@@ -1,0 +1,21 @@
+# Kafka Producer Connect to Topic
+kafka-console-producer --bootstrap-server localhost:9092 --topic $topic_name
+> (Messages Here)
+>^C # ctrl + c to exit
+
+# Kafka Producer Connect to Topic with Property
+kafka-console-producer --bootstrap-server localhost:9092 --topic $topic_name -- producer-property acks=all
+> (Messages Here)
+>^C # ctrl + c to exit
+
+# Kafka Producer Connect to Topic not existing
+# Kafka Automatically Create New Topic
+kafka-console-producer --bootstrap-server localhost:9092 --topic $topic_name
+> (Messages Here)
+>^C # ctrl + c to exit
+
+# Kafka Producer Connect to Topic, Specify Key
+kafka-console-producer --bootstrap-server localhost:9092 --topic $topic_name --property parse.key=true --propery key.separator=:
+> example key:example value
+> user_id_1111:user_log_1111
+>^C # ctrl + c to exit

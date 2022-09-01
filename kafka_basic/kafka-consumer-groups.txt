@@ -1,0 +1,17 @@
+# Kafka Consumer Group List
+kafka-consumer-groups --bootstrap-server localhost:9092 --list
+
+# Kafka Consumer Group Describe
+kafka-consumer-groups --bootstrap-server localhost:9092 --group $group_name --describe
+
+# Kafka Consumer Reset Offsets of all Topics to the earliest
+kafka-consumer-groups --bootstrap-server localhost:9092 --group $group_name --reset-offset --to-earliest --execute --all-topics
+
+# Kafka Consumer Reset Offsets of all Topics to the latest
+kafka-consumer-groups --bootstrap-server localhost:9092 --group $group_name --reset-offset --to-latest --execute --all-topics
+
+# Kafka Consumer Reset Offset of Specific Topic
+kafka-consumer-groups --bootstrap-server localhost:9092 --group $group_name --reset-offset --to-earliest --execute --topic $topic_name
+
+# Kafka Consumer Move Offset +2 from now
+kafka-consumer-groups --bootstrap-server localhost:9092 --group $group_name --reset-offset --shift-by 2 --execute --topic $topic_name
